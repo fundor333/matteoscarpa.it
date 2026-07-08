@@ -14,4 +14,3 @@ Sono Matteo Scarpa, fotografo e coder. Il mio lavoro di fotografo si concentra s
 
 Le collezioni di foto raccontano che carico in questo sito sono momenti catturati in città mentre il resto del mondo va avanti, indipendentemente da ciò che sto facendo.
 
-![Matteo Scarpa](me.jpg)
