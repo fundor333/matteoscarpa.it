@@ -9,31 +9,36 @@ timeout = "120s"
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  defaultTheme = "dark"
-  title = "Matteo Scarpa"
-  description = "Fotografo — mostre in corso, passate e future."
-  [params.author]
-    name = "Matteo Scarpa"
-    email = "matteo.scarpa@fundor333.com"
-  [params.socialIcons]
-    instagram = "https://www.instagram.com/TUO_ACCOUNT/"
-    email = "mailto:matteo.scarpa@fundor333.com"
+defaultTheme = "dark"
+title = "Matteo Scarpa"
+description = "Fotografo — mostre in corso, passate e future."
+[params.author]
+name = "Matteo Scarpa"
+email = "matteo.scarpa@fundor333.com"
+[params.socialIcons]
+instagram = "https://www.instagram.com/matteo.scarpa3/"
+email = "mailto:matteo.scarpa@fundor333.com"
 
 [outputs]
-  home = ["HTML", "RSS"]
-  page = ["HTML"]
-  section = ["HTML"]
+home = ["HTML", "RSS"]
+page = ["HTML"]
+section = ["HTML"]
 
 [imaging]
-  quality = 82
-  resampleFilter = "CatmullRom"
-  [imaging.exif]
-    disableDate = false
-    disableLatLong = true
-    includeFields = "ImageDescription|Orientation"
+quality = 85
+resampleFilter = "CatmullRom"
+[imaging.exif]
+disableDate = false
+disableLatLong = true
+includeFields = "ImageDescription|Orientation"
 
 [module]
-  [module.hugoVersion]
-    min = "0.123.0"
-  [[module.imports]]
-    path = "github.com/nicokaiser/hugo-theme-gallery/v4"
+[module.hugoVersion]
+min = "0.123.0"
+[[module.imports]]
+path = "github.com/nicokaiser/hugo-theme-gallery/v4"
+
+
+[cascade]
+[cascade.build]
+publishResources = false
