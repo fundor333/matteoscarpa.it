@@ -1,9 +1,0 @@
-{{ define "main" }}
-  {{ partial "title.html" . }}
-  {{ partial "mostra-meta.html" . }}
-  {{ partial "gallery.html" . }}
-  {{ partial "related.html" . }}
-  {{ with .Content }}
-    <section class="prose">{{ . }}</section>
-  {{ end }}
-{{ end }}
