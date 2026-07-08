@@ -1,0 +1,52 @@
+{{ define "main" }}
+  {{ partial "title.html" . }}
+
+  {{ $correnti := slice }}
+  {{ $future := slice }}
+  {{ $passate := slice }}
+
+  {{ range where .Pages "Params.private" "ne" true }}
+    {{ $stato := partial "mostra-stato.html" . }}
+    {{ $fine := .Date }}
+    {{ with .Params.data_fine }}{{ $fine = time.AsTime . }}{{ end }}
+    {{ $entry := dict "page" . "inizio" .Date "fine" $fine }}
+    {{ if eq $stato "corrente" }}
+      {{ $correnti = $correnti | append $entry }}
+    {{ else if eq $stato "futura" }}
+      {{ $future = $future | append $entry }}
+    {{ else }}
+      {{ $passate = $passate | append $entry }}
+    {{ end }}
+  {{ end }}
+
+  {{ $correnti = sort $correnti "fine" "asc" }}
+  {{ $future = sort $future "inizio" "asc" }}
+  {{ $passate = sort $passate "fine" "desc" }}
+
+  {{ if $correnti }}
+    <section class="mostre-gruppo">
+      <hgroup><h2>In corso</h2></hgroup>
+      <div class="galleries">
+        {{ range $correnti }}{{ partial "album-card.html" .page }}{{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ if $future }}
+    <section class="mostre-gruppo">
+      <hgroup><h2>Prossime</h2></hgroup>
+      <div class="galleries">
+        {{ range $future }}{{ partial "album-card.html" .page }}{{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ if $passate }}
+    <section class="mostre-gruppo">
+      <hgroup><h2>Passate</h2></hgroup>
+      <div class="galleries">
+        {{ range $passate }}{{ partial "album-card.html" .page }}{{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

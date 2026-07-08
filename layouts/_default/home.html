@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ partial "title.html" . }}
+
+  {{ $mostra := partial "mostra-in-evidenza.html" . }}
+  {{ with $mostra }}
+    {{ $gallery := partial "get-gallery.html" . }}
+    {{ with $gallery }}
+      <section class="featured">
+        <a class="featured-card" href="{{ .page.RelPermalink }}" style="background-color: {{ .color }}; background-image: url({{ .thumbnail.RelPermalink }})">
+          <div>
+            <h2>{{ .page.Title }}</h2>
+            <p>{{ partial "mostra-date-luogo.html" .page }}</p>
+          </div>
+        </a>
+      </section>
+    {{ end }}
+  {{ else }}
+    <p>Nessuna mostra disponibile al momento.</p>
+  {{ end }}
+
+  {{ with site.GetPage "/mostre" }}
+    <p><a href="{{ .RelPermalink }}">Vedi tutte le mostre</a></p>
+  {{ end }}
+{{ end }}

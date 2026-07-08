@@ -1,0 +1,9 @@
+.mostra-meta { display: flex; align-items: center; gap: 1rem; margin: 1rem 0 2rem; }
+.mostra-stato {
+  display: inline-block; padding: 0.25em 0.75em; border-radius: 999px;
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.mostra-stato--corrente { background: #2e7d32; color: #fff; }
+.mostra-stato--futura   { background: #1565c0; color: #fff; }
+.mostra-stato--passata  { background: #555; color: #eee; }
+.mostre-gruppo { margin-bottom: 4rem; }

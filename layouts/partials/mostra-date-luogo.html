@@ -1,0 +1,12 @@
+{{/* Contesto: Page mostra. Stampa intervallo date + luogo. */}}
+{{ $inizio := .Date }}
+{{ $fine := $inizio }}
+{{ with .Params.data_fine }}{{ $fine = time.AsTime . }}{{ end }}
+{{ if eq ($inizio.Format "2006-01-02") ($fine.Format "2006-01-02") }}
+  {{ $inizio.Format "2 January 2006" }}
+{{ else if eq ($inizio.Format "2006") ($fine.Format "2006") }}
+  {{ $inizio.Format "2 January" }} – {{ $fine.Format "2 January 2006" }}
+{{ else }}
+  {{ $inizio.Format "2 January 2006" }} – {{ $fine.Format "2 January 2006" }}
+{{ end }}
+{{ with .Params.luogo }} · {{ if $.Params.luogo_url }}<a href="{{ $.Params.luogo_url }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}
