@@ -1,17 +1,30 @@
 baseURL = "https://matteoscarpa.it/"
-locale = "it"
-defaultContentLanguage = "it"
-title = "Matteo Scarpa — Fotografia"
+defaultContentLanguage = "en"
 copyright = "© Matteo Scarpa"
 enableRobotsTXT = true
 timeZone = "Europe/Rome"
 timeout = "120s"
 disableKinds = ["taxonomy", "term"]
 
+[languages]
+[languages.en]
+label = "English"
+locale = "en-US"
+weight = 1
+title = "Matteo Scarpa — Photography"
+[languages.en.params]
+description = "Photographer — current, past and upcoming exhibitions."
+[languages.it]
+label = "Italiano"
+locale = "it-IT"
+weight = 2
+title = "Matteo Scarpa — Fotografia"
+[languages.it.params]
+description = "Fotografo — mostre in corso, passate e future."
+
 [params]
 defaultTheme = "dark"
 title = "Matteo Scarpa"
-description = "Fotografo — mostre in corso, passate e future."
 [params.author]
 name = "Matteo Scarpa"
 email = "matteo.scarpa@fundor333.com"
