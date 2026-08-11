@@ -5,7 +5,6 @@ description: "A collection of urban photos in which the only human being present
 params:
   theme: light
   featured: true
-  private: true # do not show in list, only as feature
 resources:
   - src: cover.jpg
     params:
