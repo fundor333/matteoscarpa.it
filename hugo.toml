@@ -9,19 +9,22 @@ disableKinds = ["taxonomy", "term"]
 [languages]
 [languages.en]
 label = "English"
+emoji = "🇬🇧"
 locale = "en-US"
 weight = 1
 title = "Matteo Scarpa — Photography"
 [languages.en.params]
 description = "Photographer — current, past and upcoming exhibitions."
+footer_cookie_consent = "This site don't use any type of cookies!"
 [languages.it]
 label = "Italiano"
+emoji = "🇮🇹"
 locale = "it-IT"
 weight = 2
 title = "Matteo Scarpa — Fotografia"
 [languages.it.params]
 description = "Fotografo — mostre in corso, passate e future."
-
+footer_cookie_consent = "Questo sito non utilizza alcun tipo di cookie!"
 [params]
 defaultTheme = "dark"
 title = "Matteo Scarpa"

@@ -1,0 +1,17 @@
+<footer>
+  {{ partialCached "social-icons.html" . }}
+  <br>
+  <section>
+    {{ with .Site.Params.footer_cookie_consent }}
+      🍪 {{ . | markdownify }} 🍪
+    {{ end }}
+  </section>
+  <section>
+    {{ .Site.Copyright }}
+    {{ range .Site.Menus.footer }}
+      <a {{ with .Params.rel -}}rel="{{ . }}"{{ end -}} href="{{ .URL }}">
+        {{ .Name }}
+      </a>
+    {{ end }}
+  </section>
+</footer>
